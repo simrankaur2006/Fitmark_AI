@@ -46,7 +46,7 @@ Guidelines:
  */
 async function analyzeResumeWithAI({ resumeText, jobDescription }) {
   const apiKey = process.env.GEMINI_API_KEY;
-  const model = process.env.GEMINI_MODEL || 'gemini-3.6-flash-lite';
+  const model = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite';
 
   if (!apiKey) {
     const err = new Error('AI service is not configured. Missing GEMINI_API_KEY.');
