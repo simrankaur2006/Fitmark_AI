@@ -1,12 +1,51 @@
 # Fitmark — AI Resume Analyzer
 
-A full-stack, production-shaped resume-vs-job-description analyzer.
+FitMark AI is an AI-powered resume analysis platform that evaluates how well a candidate's resume matches a given Job Description (JD). It analyzes skills, experience, qualifications, and keywords to identify strengths, skill gaps, and areas for improvement.
+
+Features
+📄 Resume Analysis — Analyze resume content and extract relevant information.
+
+
+🎯 Job Description Matching — Compare a resume against a specific job description.
+
+
+📊 Match Score — Generate an overall resume–job compatibility score.
+
+
+🧠 AI-Powered Analysis — Use LLMs to understand resume and JD context beyond simple keyword matching.
+
+
+🔍 Skill Gap Detection — Identify missing or insufficient skills required for the target role.
+
+
+💡 Personalized Suggestions — Get actionable recommendations to improve resume relevance.
+
+
+📋 Keyword Analysis — Identify important keywords and technologies from the job description.
+
+
+⚡ Fast & Interactive UI — Simple interface for uploading/providing resume and job details.
+
 
 - **Frontend:** React 18 + Vite + React Router + Tailwind CSS + Recharts-ready
 - **Backend:** Node.js + Express
 - **Database:** MongoDB (Mongoose) — stores analysis history
 - **AI:** Anthropic Claude API, called only from the backend (key never touches the browser)
 
+How It Works-
+Resume + Job Description
+          ↓
+    Resume Processing
+          ↓
+    JD Analysis
+          ↓
+    AI/LLM Analysis
+          ↓
+  Skill & Keyword Matching
+          ↓
+    Match Score + Gaps
+          ↓
+ Personalized Suggestions
 ---
 
 ## 1. Project structure
@@ -60,19 +99,31 @@ ai-resume-analyzer/
    keywords, strengths/weaknesses, ATS warnings), Improve My Resume (STAR
    bullet rewrites), and Interview Prep (categorized questions).
 
+Use Cases-
+
+FitMark AI can be useful for:
+
+Students preparing for placements
+Freshers applying for internships
+Job seekers targeting specific roles
+Resume optimization
+Identifying missing technical skills
+Understanding job requirements
+
+
 ## 3. Setup
 
 ### Prerequisites
 - Node.js 18+
 - A MongoDB instance (local `mongod`, or a free MongoDB Atlas cluster)
-- An Anthropic API key from https://console.anthropic.com/
+- An Gemini API key 
 
 ### Backend
 
 ```bash
 cd backend
-cp .env.example .env
-# edit .env: set MONGODB_URI and ANTHROPIC_API_KEY
+cp .env
+
 npm install
 npm run dev        # starts on http://localhost:5000
 ```
@@ -85,10 +136,6 @@ npm install
 npm run dev         # starts on http://localhost:5173
 ```
 
-The Vite dev server proxies `/api/*` to `http://localhost:5000` (see
-`vite.config.js`), so no CORS configuration is needed in development beyond
-what's already in `server.js`.
-
 ### Production build
 
 ```bash
@@ -96,30 +143,14 @@ cd frontend
 npm run build        # outputs static files to frontend/dist
 ```
 
-Serve `frontend/dist` from any static host (Vercel, Netlify, Nginx, or Express's
-own `express.static`), and deploy `backend/` to any Node host (Render, Railway,
-Fly.io, a VPS, etc.) with the same environment variables from `.env.example`.
 
 ## 4. Security notes
 
-- The Anthropic API key lives only in the backend's `.env` and is never sent
-  to the browser.
 - Uploaded files are validated by both extension and MIME type, and capped at
   `MAX_UPLOAD_MB` (default 5MB).
 - Uploaded resume **bytes** are never written to disk or the database — only
   the extracted text is used in-memory for the AI call, and only the AI's
   structured output (plus a short JD snippet and filename) is persisted.
-- The `/api/analysis` POST route is rate-limited (30 requests / 15 min / IP)
-  since it's the endpoint that calls the paid AI API.
 
-## 5. Extending this
 
-- **Auth:** add a `User` model and JWT/session middleware, then scope
-  `Analysis.clientId` to the authenticated user id instead of an anonymous
-  browser-generated id.
-- **Swap AI providers:** all AI logic is isolated in `backend/services/aiService.js`
-  — replace the `fetch` call and system prompt to point at a different provider
-  without touching routes or the frontend.
-- **Swap storage:** `Analysis` is a normal Mongoose model; moving to
-  PostgreSQL means swapping this file and `config/db.js` for a Prisma/Sequelize
-  equivalent — the controller/route layer is storage-agnostic.
+⭐ If you find this project useful, consider giving the repository a star!
