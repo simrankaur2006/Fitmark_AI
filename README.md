@@ -4,13 +4,28 @@ FitMark AI is an AI-powered resume analysis platform that evaluates how well a c
 
 Features
 📄 Resume Analysis — Analyze resume content and extract relevant information.
+
+
 🎯 Job Description Matching — Compare a resume against a specific job description.
+
+
 📊 Match Score — Generate an overall resume–job compatibility score.
+
+
 🧠 AI-Powered Analysis — Use LLMs to understand resume and JD context beyond simple keyword matching.
+
+
 🔍 Skill Gap Detection — Identify missing or insufficient skills required for the target role.
+
+
 💡 Personalized Suggestions — Get actionable recommendations to improve resume relevance.
+
+
 📋 Keyword Analysis — Identify important keywords and technologies from the job description.
+
+
 ⚡ Fast & Interactive UI — Simple interface for uploading/providing resume and job details.
+
 
 - **Frontend:** React 18 + Vite + React Router + Tailwind CSS + Recharts-ready
 - **Backend:** Node.js + Express
