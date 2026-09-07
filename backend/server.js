@@ -10,11 +10,13 @@ const { errorHandler, notFound } = require('./middleware/errorHandler');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
-  })
-);
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://fitmark-ai.vercel.app"
+    ],
+    credentials: true
+}));
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
 
