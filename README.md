@@ -3,6 +3,7 @@
 FitMark AI is an AI-powered resume analysis platform that evaluates how well a candidate's resume matches a given Job Description (JD). It analyzes skills, experience, qualifications, and keywords to identify strengths, skill gaps, and areas for improvement.
 
 Features
+````
 📄 Resume Analysis — Analyze resume content and extract relevant information.
 
 
@@ -26,13 +27,19 @@ Features
 
 ⚡ Fast & Interactive UI — Simple interface for uploading/providing resume and job details.
 
+````
 
 - **Frontend:** React 18 + Vite + React Router + Tailwind CSS + Recharts-ready
 - **Backend:** Node.js + Express
 - **Database:** MongoDB (Mongoose) — stores analysis history
 - **AI:** Anthropic Claude API, called only from the backend (key never touches the browser)
 
+
+Check the application -> https://fitmark-ai.vercel.app/
+
+
 How It Works-
+````
 Resume + Job Description
           ↓
     Resume Processing
@@ -46,6 +53,7 @@ Resume + Job Description
     Match Score + Gaps
           ↓
  Personalized Suggestions
+````
 ---
 
 ## 1. Project structure
@@ -102,13 +110,14 @@ ai-resume-analyzer/
 Use Cases-
 
 FitMark AI can be useful for:
-
+```
 Students preparing for placements
 Freshers applying for internships
 Job seekers targeting specific roles
 Resume optimization
 Identifying missing technical skills
 Understanding job requirements
+```
 
 
 ## 3. Setup
