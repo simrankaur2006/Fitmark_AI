@@ -30,9 +30,9 @@ Features
 ````
 
 - **Frontend:** React 18 + Vite + React Router + Tailwind CSS + Recharts-ready
-- **Backend:** Node.js + Express
+- **Backend:** Node.js + Express.js
 - **Database:** MongoDB (Mongoose) — stores analysis history
-- **AI:** Anthropic Claude API, called only from the backend (key never touches the browser)
+- **AI:** Gemini API, called only from the backend (key never touches the browser)
 
 
 Check the application -> https://fitmark-ai.vercel.app/
