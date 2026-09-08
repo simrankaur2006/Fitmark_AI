@@ -1,4 +1,4 @@
-# Fitmark — AI Resume Analyzer
+# FitmarkAI- A Resume Analyzer
 
 FitMark AI is an AI-powered resume analysis platform that evaluates how well a candidate's resume matches a given Job Description (JD). It analyzes skills, experience, qualifications, and keywords to identify strengths, skill gaps, and areas for improvement.
 
